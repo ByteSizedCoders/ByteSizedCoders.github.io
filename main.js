@@ -1,9 +1,3 @@
-const button = document.queryS;
-elector(".menu");
-const navigationList = document.querySelector(".navlist");
-button.addEventListener("click", () => {
-  navigationList.classList.toggle("active");
-});
 
 function darkmode() {
   const wasDarkmode = localStorage.getItem("darkmode") === "true";
