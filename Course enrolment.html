@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course enrolment</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <script src="main.js"></script>
+    <style>
+      body {
+        background-color: var(--primary-color);
+      }
+      .enrol {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        text-align: center;
+        align-items: center;
+        margin: 9em;
+        margin-top: 1em;
+        color: #fff;
+      }
+      label {
+        align-items: normal;
+        text-align: left;
+        font-size: 1.4em;
+      }
+      .enrol div {
+        padding: 1em;
+      }
+
+      .title {
+        padding-top: 5vw;
+        color: var(--cen1);
+        margin: 2vw;
+      }
+
+      form {
+        background-color: var(--cen2);
+        padding: 3vw;
+        border-radius: 3vw;
+        box-shadow: 0 0 4vw rgba(0, 0, 0, 0.4);
+      }
+      select {
+        width: 100%;
+        padding: 0.3em;
+        font-size: 1.7vw;
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        border-radius: 1vw;
+        margin-bottom: 0.4em;
+      }
+      .filter {
+        display: block;
+      }
+      .filter .filter2 {
+        width: 13em;
+      }
+      .filter .t {
+        padding-right: 2em;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #a0a5a8;
+      }
+
+      .fa-filter {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+      img {
+        width: 8%;
+        padding: 0;
+        margin: 0;
+      }
+      input[type="checkbox"] {
+        margin-left: 2em;
+        float: right;
+      }
+
+      button[type="submit"] {
+        background-color: #e1b5fb;
+        color: #ffffff;
+        padding: 1vw 2vw;
+        margin: 2vw;
+        font-size: 1.4em;
+        border: none;
+        border-radius: 1vw;
+      }
+      button[type="submit"]:hover {
+        background-color: #f7e6fd;
+      }
+      .courses {
+        text-align: left;
+      }
+
+      .courses input[type] {
+        float: right;
+        margin-left: 1em;
+        padding-top: 2em;
+      }
+      .breadcrumbs {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body onload="onload()">
+    <nav class="navbar">
+      <div>
+        <a href="index.html" accesskey="h"
+          ><img src="images/logo (2).png" alt="logo"
+        /></a>
+      </div>
+      <ul class="navlist" id="nav">
+        <li class="list-item">
+          <a href="courses.html" accesskey="c">Courses</a>
+        </li>
+        <li>
+          <a href="Tutorss.html" accesskey="t">Tutors</a>
+        </li>
+        <li>
+          <a href="admininstrator.html" accesskey="a">Administrator</a>
+        </li>
+        <li>
+          <a href="parent.html" accesskey="p">Parent</a>
+        </li>
+        <li>
+          <a href="AboutUs.html" accesskey="b">About us</a>
+        </li>
+      </ul>
+      <div class="menu" id="button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+
+    <!-- end of nav -->
+    <!--breadcrumbs-->
+
+    <div class="breadcrumbs">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+              />
+              <path
+                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+
+        <li><a href="parent.html">parent</a></li>
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+        <li><a href="#">Course enrolment</a></li>
+      </ul>
+    </div>
+    <!-- breadcrumbs  -->
+    <div class="enrol">
+      <div class="title"><h1>Course enrolment</h1></div>
+
+      <form>
+        <div>
+          <label>student name </label>
+          <select name="student">
+            <option>choose student</option>
+            <option>Ahmad saleh</option>
+            <option>Noura Saleh</option>
+            <option>Reem Saleh</option>
+          </select>
+        </div>
+        <div class="filter">
+          <div class="t">
+            <select class="filter2" name="Prerequisites">
+              <option>filter by prerequisites</option>
+              <option>Python</option>
+              <option>Scratch</option>
+              <option>javasript</option>
+            </select>
+            <i class="fa-solid fa-filter" style="color: #ffffff"></i>
+            <select class="filter2" name="Tutors">
+              <option>filter tutor</option>
+              <option>Hailey rhode</option>
+              <option>Tammy west</option>
+              <option>Daniel roberts</option>
+            </select>
+            <i class="fa-solid fa-filter" style="color: #ffffff"></i>
+          </div>
+
+          <div class="courses">
+            <p class="course">
+              <img src="images/Python.svg.png" alt="Python" /><label>
+                Python</label
+              ><input type="checkbox" />
+            </p>
+            <p class="course">
+              <label><img src="images/htmlPhoto.png" alt="HTML" /> HTML</label
+              ><input type="checkbox" />
+            </p>
+            <p class="course">
+              <label>
+                <img src="images/scratch.png" alt="scratch" /> scratch</label
+              ><input type="checkbox" />
+            </p>
+          </div>
+        </div>
+      </form>
+
+      <button type="submit" value="Submit">Enroll</button>
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerrow">
+          <div class="footer-col">
+            <h4>Location</h4>
+            <ul>
+              <li>saudi arabia, Riyadh</li>
+              <li>saudi arabia, jeddah</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social">
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff"></i>
+              <i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
+            </div>
+            <p id="copyRight">©2023 Byte-sized coders</p>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li>+9660552778344</li>
+              <li>Byte-sized-coders@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

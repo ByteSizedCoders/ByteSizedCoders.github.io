@@ -1,0 +1,74 @@
+body:not(.dark-mode) {
+  --bread: #000;
+  --background-color: #f1f2f6;
+  --color: #1b1d1f;
+
+  --third-color: white;
+  --forth-color: rgb(138, 58, 179);
+
+  --primary-color: white;
+  --second-color: white;
+  --fifth-color: #441384;
+  --six-color: #414142;
+
+  --seven-color: #693a78;
+  --eight-color: #603483;
+  --nine-color: #724aa6;
+  --ten-color: #414141;
+  --t1: rgb(223, 201, 236);
+  --t2: #cda0db;
+  --t3: #fff;
+  --c1: #701279;
+  --c2: white;
+  --a1: rgb(172, 74, 194);
+  --a2: #b06a94;
+  --a3: #5c7689;
+  --a4: #b06a94;
+  --p1: rgba(138, 43, 226, 0.5);
+  --p2: #bd61c0;
+  --p3: black;
+  --r1: #e8e8e8;
+  --cen1: #a359d4;
+  --cen2: #b385d2;
+  --s1: #ccc;
+  --s2: white;
+  --about1: #666;
+  --about2: #333;
+}
+
+.dark-mode {
+  --bread: white;
+  --background-color: #5e616d;
+  --color: #f1f2f6;
+
+  --third-color: white;
+  --forth-color: rgb(255, 255, 255);
+
+  --primary-color: #5e616d;
+  --second-color: #5e616d;
+  --fifth-color: #ffffff;
+  --six-color: rgb(224, 224, 224);
+  --seven-color: white;
+  --eight-color: white;
+  --nine-color: #3b2756;
+  --ten-color: white;
+  --t1: #cda0db;
+  --t2: #603483;
+  --t3: #9273ab;
+  --c1: rgb(255, 255, 255);
+  --c2: rgb(160, 121, 172);
+  --a1: #603483;
+  --a2: #3b2756;
+  --a3: #a5c7e1;
+  --a4: white;
+  --p1: #a581b0;
+  --p2: white;
+  --p3: white;
+  --r1: rgb(173, 142, 173);
+  --cen1: white;
+  --cen2: #856e94;
+  --s1: #6e6e6e;
+  --s2: #bfbebe;
+  --about1: #dbdbdb;
+  --about2: #ffffff;
+}

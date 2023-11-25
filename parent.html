@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ByteSized Coders</title>
+    <link rel="stylesheet" href="navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <script src="main.js"></script>
+    <style>
+      body {
+        background-color: var(--second-color);
+      }
+      p {
+        margin-left: 1em;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+      }
+      li.kidName {
+        margin: 0.5em;
+        padding: 0.3em; /* Add some padding for spacing */
+        background-color: var(--p1);
+        text-align: top left;
+        font-size: 1.5em;
+        border-radius: 1vw;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0; /* Remove default padding for the ul element */
+        list-style-image: url(images/profileIcon.png);
+        list-style-position: inside;
+        position: center;
+      }
+      p {
+        font-size: 2em;
+        font-weight: bold;
+      }
+      .button {
+        height: 10em;
+        width: 20em;
+        color: rgba(138, 43, 226, 0.5);
+        font-size: 1em;
+        font-weight: bold;
+        margin-left: 10em;
+      }
+      /*breadcrumbs*/
+      .breadcrumbs ul svg {
+        width: 20px;
+        vertical-align: middle;
+      }
+
+      .breadcrumbs {
+        font-family: "Roboto", sans-serif;
+        padding: 10px 48px;
+        box-shadow: 0 4px 30px -10px rgba(0, 0, 0, 0.2);
+        width: fit-content;
+        margin-top: 1em;
+      }
+
+      .breadcrumbs ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 8px;
+      }
+
+      .breadcrumbs ul li a {
+        text-decoration: none;
+        color: var(--bread);
+      }
+    </style>
+  </head>
+  <body onload="onload()">
+    <nav class="navbar">
+      <div>
+        <a href="index.html" accesskey="h"
+          ><img src="images/logo (2).png" alt="logo"
+        /></a>
+      </div>
+      <ul class="navlist" id="nav">
+        <li class="list-item">
+          <a href="courses.html" accesskey="c">Courses</a>
+        </li>
+        <li>
+          <a href="Tutorss.html" accesskey="t">Tutors</a>
+        </li>
+        <li>
+          <a href="admininstrator.html" accesskey="a">Administrator</a>
+        </li>
+        <li>
+          <a href="parent.html" accesskey="p">Parent</a>
+        </li>
+        <li>
+          <a href="AboutUs.html" accesskey="b">About us</a>
+        </li>
+      </ul>
+      <div class="menu" id="button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+
+    <!--breadcrumbs-->
+    <div class="breadcrumbs">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+              />
+              <path
+                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+
+        <li><a href="parent.html">Parent</a></li>
+      </ul>
+    </div>
+    <!-- breadcrumbs  -->
+    <main>
+      <p style="color: var(--p3)">your kids:</p>
+      <div class="students-container"></div>
+    </main>
+    <div id="kidsContainer" class="students-container"></div>
+
+    <!--<ul>
+      <li class="kidName">Reem saleh</li>
+      <li class="kidName">Noura Saleh</li>
+      <li class="kidName">Ahmad Saleh</li>
+    </ul>-->
+    <a href="register a new kid1.html">
+      <button class="button" type="button" data-toggle="button">
+        Register a new kid
+      </button></a
+    >
+
+    <a href="Course enrolment.html">
+      <button class="button" type="button" data-toggle="button">
+        Course enrollment
+      </button></a
+    >
+
+    <a href="CourseEvaluation.html">
+      <button class="button" type="button" data-toggle="button">
+        Course evaluation
+      </button></a
+    >
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerrow">
+          <div class="footer-col">
+            <h4>Location</h4>
+            <ul>
+              <li>saudi arabia, Riyadh</li>
+              <li>saudi arabia, jeddah</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social">
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff"></i>
+              <i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
+            </div>
+            <p id="copyRight">©2023 Byte-sized coders</p>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li>+9660552778344</li>
+              <li>Byte-sized-coders@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Retrieve kidName from localStorage
+      const storedKidName = localStorage.getItem("kidName");
+
+      // Display kidName in the HTML
+      const kidNameDisplay = document.getElementById("kidNameDisplay");
+      if (storedKidName) {
+        kidNameDisplay.textContent = storedKidName;
+      }
+
+      // JavaScript code to handle local storage for parent's children
+
+      // Check local storage for existing children
+      const existingChildren =
+        JSON.parse(localStorage.getItem("parentChildren")) || [];
+
+      // Display children on the page
+      const kidsContainer = document.getElementById("kidsContainer");
+
+      // If there are no children, set default values
+      if (existingChildren.length === 0) {
+        const defaultKids = [
+          {
+            kidName: "Haya",
+            kidPhoto: "profileIcon.png",
+            kidGender: "Female",
+            kidDOB: "2000-01-01",
+          },
+          {
+            kidName: "Nora",
+            kidPhoto: "profileIcon.png",
+            kidGender: "Female",
+            kidDOB: "2000-01-01",
+          },
+        ];
+
+        // Save default kids to local storage
+        localStorage.setItem("parentChildren", JSON.stringify(defaultKids));
+
+        // Display default kids on the page
+        displayChildren(defaultKids);
+      } else {
+        // Display existing children on the page
+        displayChildren(existingChildren);
+      }
+
+      function displayChildren(children) {
+        const kidsList = document.createElement("ul");
+
+        children.forEach((child) => {
+          const listItem = document.createElement("li");
+          listItem.classList.add("kidName");
+          listItem.textContent = child.kidName;
+          kidsList.appendChild(listItem);
+        });
+
+        kidsContainer.appendChild(kidsList);
+      }
+    </script>
+  </body>
+</html>

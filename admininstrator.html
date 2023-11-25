@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ByteSized Coders - Administrator</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <script src="main.js"></script>
+  </head>
+  <body onload="onload()">
+    <nav class="navbar">
+      <div>
+        <a href="index.html" accesskey="h"
+          ><img src="images/logo (2).png" alt="logo"
+        /></a>
+      </div>
+      <ul class="navlist" id="nav">
+        <li class="list-item">
+          <a href="courses.html" accesskey="c">Courses</a>
+        </li>
+        <li>
+          <a href="Tutorss.html" accesskey="t">Tutors</a>
+        </li>
+        <li>
+          <a href="admininstrator.html" accesskey="a">Administrator</a>
+        </li>
+        <li>
+          <a href="parent.html" accesskey="p">Parent</a>
+        </li>
+        <li>
+          <a href="AboutUs.html" accesskey="b">About us</a>
+        </li>
+      </ul>
+      <div class="menu" id="button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+    <!--breadcrumbs-->
+    <div class="breadcrumbs">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+              />
+              <path
+                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+
+        <li><a href="admininstrator.html">Administrator</a></li>
+      </ul>
+    </div>
+    <!-- breadcrumbs  -->
+
+    <p id="currentWeekDate"></p>
+
+    <div class="lists-container">
+      <div class="container">
+        <div class="header">Students</div>
+        <div class="content">
+          <ul class="student-list">
+            <li>Ahmad abduallah</li>
+            <li>sarah ahmad</li>
+            <li>nora mohammad</li>
+            <li>William Wilson</li>
+            <li>tom jack</li>
+            <li>norah feisal</li>
+            <li>Ava lee</li>
+            <li>jihoon park</li>
+            <li>Michael Brown</li>
+            <li>Alex William</li>
+            <li>Lily Turner</li>
+            <li>Christopher Lewis</li>
+            <li>Joseph Thomas</li>
+            <li>James Jones</li>
+            <li>David Taylor</li>
+            <li>Mia Jackson</li>
+            <li>Daniel Harris</li>
+            <li>Emma Whites</li>
+            <li>Sophia Martinez</li>
+            <li>Jenifer</li>
+            <li>Greyson Ryan</li>
+            <li>Simon Duncan</li>
+            <li>Calvin Fox</li>
+            <li>Lily fine</li>
+            <li>Joseph William</li>
+            <li>Nicole laeno</li>
+            <li>Emily Johnson</li>
+            <li>Liam Anderson</li>
+            <li>Sophia Carter</li>
+            <li>Olivia Davis</li>
+            <li>Mason Robinson</li>
+            <li>Ava Mitchell</li>
+            <li>Emma Harris</li>
+            <!-- more student names as needed -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="header">Courses</div>
+        <div class="content">
+          <ul>
+            <li>
+              <div class="course-header">
+                Introduction to python <br />
+                Instructor: Tammy west
+              </div>
+              <div class="enrolled-students-box">
+                <p>Students▼</p>
+                <ul class="enrolled-students">
+                  <li><p>Ahmad abduallah</p></li>
+                  <li><p>nora mohammad</p></li>
+                  <li><p>Sophia Martinez</p></li>
+                  <li><p>Mia Jackson</p></li>
+                  <li><p>Lily Turner</p></li>
+                  <li>
+                    <ul id="Target1" class="extra_content">
+                      <li><p>Jenifer</p></li>
+                      <li><p>Greyson Ryan</p></li>
+                      <li><p>Simon Duncan</p></li>
+                      <li><p>Calvin Fox</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="read_more" data-target="Target1">Show More</p>
+                  </li>
+
+                  <!-- more enrolled students as needed -->
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="course-header">
+                Scratch <br />
+                Instructor: Instructor 2
+              </div>
+              <div class="enrolled-students-box">
+                <p>Students▼</p>
+                <ul class="enrolled-students">
+                  <li><p>Daniel Harris</p></li>
+                  <li><p>jihoon park</p></li>
+                  <li><p>norah feisal</p></li>
+                  <li><p>David Taylor</p></li>
+                  <li><p>Lily fine</p></li>
+                  <li>
+                    <ul id="Target2" class="extra_content">
+                      <li><p>Joseph William</p></li>
+                      <li><p>Emma Harris</p></li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <p class="read_more" data-target="Target2">Show More</p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="course-header">
+                HTML <br />
+                Instructor: sarah Ahmad
+              </div>
+              <div class="enrolled-students-box">
+                <p>Students▼</p>
+                <ul class="enrolled-students">
+                  <li><p>sarah ahmad</p></li>
+                  <li><p>tom jack</p></li>
+                  <li><p>Ava lee</p></li>
+                  <li><p>Nicole laeno</p></li>
+                  <li><p>Emily Johnson</p></li>
+                  <li>
+                    <ul id="Target3" class="extra_content">
+                      <li><p>Liam Anderson</p></li>
+                      <li><p>Sophia Carter</p></li>
+                      <li><p>Olivia Davis</p></li>
+                      <li><p>Mason Robinson</p></li>
+                      <li><p>Ava Mitchell</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p class="read_more" data-target="Target3">Show More</p>
+                  </li>
+                  <!-- more instructing courses as needed -->
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="course-header">
+                JavaScript <br />
+                Instructor: Khawlah Sakeh
+              </div>
+              <div class="enrolled-students-box">
+                <p>Students▼</p>
+                <ul class="enrolled-students">
+                  <li><p>sarah ahmad</p></li>
+                  <li><p>tom jack</p></li>
+                  <li><p>Ava lee</p></li>
+                  <li><p>Nicole laeno</p></li>
+                  <!-- more instructing courses as needed -->
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <div class="course-header">
+                game-coding <br />
+                Instructor: Hidey green
+              </div>
+              <div class="enrolled-students-box">
+                <p>Students▼</p>
+                <ul class="enrolled-students">
+                  <li><p>Mia Reed</p></li>
+                  <li><p>Sabrina mohammad</p></li>
+                  <li><p>Ethan Powell</p></li>
+                  <li><p>Harper Brooks</p></li>
+                  <!-- more instructing courses as needed -->
+                </ul>
+              </div>
+            </li>
+            <!-- more course names and instructors as needed -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="header">Tutors</div>
+        <div class="content">
+          <ul class="instructors-list">
+            <li>
+              <div class="instructor-header">
+                <a href="Schedule1.html">Hailey Rhode</a>
+              </div>
+              <div class="instructing-courses-box">
+                <p>Courses▼</p>
+                <ul class="instructing-courses">
+                  <li><p>python</p></li>
+                  <!-- more instructing courses as needed -->
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="instructor-header">
+                <a href="Schedule2.html">Tom parker</a>
+              </div>
+              <div class="instructing-courses-box">
+                <p>Courses▼</p>
+                <ul class="instructing-courses">
+                  <li><p>Scratch</p></li>
+                  <li><p>HTML</p></li>
+                  <!-- more instructing courses as needed -->
+                </ul>
+              </div>
+            </li>
+            <div class="instructor-header">
+              <a href="Schedule2.html">Tammy west</a>
+            </div>
+            <div class="instructing-courses-box">
+              <p>Courses▼</p>
+              <ul class="instructing-courses">
+                <li><p>video game-coding</p></li>
+                <li><p>Roblox Studio</p></li>
+                <!-- more instructing courses as needed -->
+              </ul>
+            </div>
+
+            <div class="instructor-header">
+              <a href="Schedule2.html">Rachel green</a>
+            </div>
+            <div class="instructing-courses-box">
+              <p>Courses▼</p>
+              <ul class="instructing-courses">
+                <li><p>Roblox Studio</p></li>
+                <li><p>JavaScript</p></li>
+                <!-- more instructing courses as needed -->
+              </ul>
+            </div>
+
+            <!-- more instructor names and instructing courses as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--footer-->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerrow">
+          <div class="footer-col">
+            <h4>Location</h4>
+            <ul>
+              <li>saudi arabia, Riyadh</li>
+              <li>saudi arabia, jeddah</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social">
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff"></i>
+              <i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
+            </div>
+            <p id="copyRight">©2023 Byte-sized coders</p>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li>+9660552778344</li>
+              <li>Byte-sized-coders@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Function to display the current week's date
+      function displayCurrentWeekDate() {
+        const today = new Date();
+        const firstDayOfWeek = new Date(
+          today.setDate(today.getDate() - today.getDay())
+        );
+        const lastDayOfWeek = new Date(
+          today.setDate(firstDayOfWeek.getDate() + 6)
+        );
+
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        const formattedStartDate = firstDayOfWeek.toLocaleDateString(
+          "en-US",
+          options
+        );
+        const formattedEndDate = lastDayOfWeek.toLocaleDateString(
+          "en-US",
+          options
+        );
+
+        const currentWeekDateElement =
+          document.getElementById("currentWeekDate");
+        document.getElementById(
+          "currentWeekDate"
+        ).textContent = `Current Week: ${formattedStartDate} - ${formattedEndDate}`; //اقدر اشيل التاريخ الثاني
+        // Apply styles using JavaScript
+        currentWeekDateElement.style.fontSize = "1em";
+        currentWeekDateElement.style.fontWeight = "bold";
+        currentWeekDateElement.style.color = "#ffffff";
+        currentWeekDateElement.style.marginBottom = "1em";
+        currentWeekDateElement.style.marginLeft = "1em";
+        currentWeekDateElement.style.marginRight = "60em";
+        currentWeekDateElement.style.backgroundColor = "rgb(172, 74, 194)";
+        currentWeekDateElement.style.marginLeft = "1em";
+        currentWeekDateElement.style.padding = "0.5em";
+        currentWeekDateElement.style.borderRadius = "1vw";
+      }
+
+      // Display the current week's date when the page loads
+      displayCurrentWeekDate();
+
+      const buttons = document.getElementsByClassName("read_more");
+
+      const onButtonClick = (event) => {
+        const button = event.target;
+        const dataTarget = button.getAttribute("data-target");
+        const extraContent = document.getElementById(dataTarget);
+        button.innerHTML =
+          button.innerHTML === "Show Less" ? "Show More" : "Show Less";
+        extraContent.classList.toggle("show");
+      };
+
+      const attachingEvent = (e) => e.addEventListener("click", onButtonClick);
+
+      Array.prototype.forEach.call(buttons, attachingEvent);
+    </script>
+  </body>
+</html>

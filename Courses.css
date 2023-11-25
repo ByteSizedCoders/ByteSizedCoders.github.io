@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--second-color);
+}
+
+h2 {
+  color: var(--c1);
+}
+
+/* Container Styles */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--c2);
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.course {
+  color: var(--c1);
+  flex: 1;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, color 0.3s;
+  z-index: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.course:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #701279;
+  z-index: 3;
+}
+
+header {
+  background-color: var(--c2);
+  color: var(--c2);
+  text-align: left;
+  padding: 20px;
+  font-size: 13px;
+  border-bottom: 2px solid #f4f4f4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container p {
+  font-family: sans-serif;
+  color: var(--c1);
+}
+
+.course .courseDetails {
+  display: none;
+  background-color: var(--c2);
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  transition: filter 0.3s;
+  font-size: 17px;
+}
+
+.course:hover .courseDetails {
+  background-color: var(--c2);
+  display: block;
+  z-index: 2; /* Adjust the z-index to make the details appear above other courses */
+  border-radius: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.course-dropdown .course {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.course-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--c2);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+.course-dropdown .course:hover + .dropdown-content {
+  display: block;
+}
+.course h3 {
+  text-align: center;
+  margin: 0;
+}

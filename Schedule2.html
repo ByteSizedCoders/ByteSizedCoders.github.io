@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor's Schedule</title>
+    <link rel="website icon" type="png" href="images/logo (2).png" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="ScheduleStyle.css" />
+    <link rel="stylesheet" href="shared.css" />
+    <script src="main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body onload="onload()">
+    <!--nav bar-->
+    <nav class="navbar">
+      <div>
+        <a href="index.html" accesskey="h"
+          ><img src="images/logo (2).png" alt="logo"
+        /></a>
+      </div>
+      <ul class="navlist" id="nav">
+        <li class="list-item">
+          <a href="courses.html" accesskey="c">Courses</a>
+        </li>
+        <li>
+          <a href="Tutorss.html" accesskey="t">Tutors</a>
+        </li>
+        <li>
+          <a href="admininstrator.html" accesskey="a">Administrator</a>
+        </li>
+        <li>
+          <a href="parent.html" accesskey="p">Parent</a>
+        </li>
+        <li>
+          <a href="AboutUs.html" accesskey="b">About us</a>
+        </li>
+      </ul>
+      <div class="menu" id="button">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+
+    <!-- breadcrumbs  -->
+
+    <div class="breadcrumbs">
+      <ul>
+        <li>
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+              />
+              <path
+                d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+              />
+            </svg>
+          </a>
+        </li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+
+        <li><a href="admininstrator.html">Administrator</a></li>
+
+        <li>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </li>
+
+        <li><a href="Schedule2.html">Schedule</a></li>
+      </ul>
+    </div>
+
+    <!-- end of breadcrumbs  -->
+
+    <div class="schedule">
+      <table>
+        <tr>
+          <td class="tname" colspan="8">
+            <img src="images/teacher2.png" alt="Tutor" />Tutor name
+          </td>
+        </tr>
+        <tr>
+          <th class="days">Time</th>
+          <th class="days">Sunday</th>
+          <th class="days">Monday</th>
+          <th class="days">Tuesday</th>
+          <th class="days">Wednesday</th>
+          <th class="days">Thursday</th>
+          <th class="days">Friday</th>
+          <th class="days">Saturday</th>
+        </tr>
+        <tr>
+          <td>3:00-4:00</td>
+          <td></td>
+          <td></td>
+          <td rowspan="4">Scratch</td>
+          <td class="unavailable"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4:00-5:00</td>
+          <td></td>
+          <td></td>
+          <td class="unavailable"></td>
+          <td colspan="3">HTML</td>
+        </tr>
+        <tr>
+          <td>5:00-6:00</td>
+          <td colspan="2" rowspan="2">HTML</td>
+          <td class="unavailable"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6:00-7:00</td>
+          <td class="unavailable"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7:00-8:00</td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+          <td class="unavailable"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footercontainer">
+        <div class="footerrow">
+          <div class="footer-col">
+            <h4>Location</h4>
+            <ul>
+              <li>saudi arabia, Riyadh</li>
+              <li>saudi arabia, jeddah</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social">
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+              <i class="fa-brands fa-facebook" style="color: #ffffff"></i>
+              <i class="fa-brands fa-linkedin" style="color: #ffffff"></i>
+            </div>
+            <p id="copyRight">©2023 Byte-sized coders</p>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li>+9660552778344</li>
+              <li>Byte-sized-coders@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

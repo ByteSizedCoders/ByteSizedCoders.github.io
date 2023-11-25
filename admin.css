@@ -1,0 +1,194 @@
+body {
+  background-color: var(--second-color);
+}
+.container {
+  width: 29.6em;
+  border: 0.2em solid var(--a1);
+  margin-right: 1em;
+  margin-left: 1.7em;
+  margin-top: 10em;
+  display: inline-block;
+  height: 20em;
+  flex: 1;
+  overflow: hidden;
+  background-color: var(--c2);
+}
+.header {
+  text-align: center;
+  border-bottom: solid var(--a1);
+  font-weight: bold;
+  font-size: 2em;
+  position: sticky;
+  top: 0;
+  color: var(--c1);
+}
+.content {
+  max-height: 18em;
+  overflow-y: auto;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.container li {
+  position: relative;
+  padding: 0.6em;
+  border-bottom: 0.02em solid var(--a1);
+}
+li:last-child {
+  border-bottom: none;
+}
+.content ul .enrolled-students {
+  padding: 0.06em;
+  display: inline;
+}
+
+.content ul .enrolled-students li:first-child {
+  border-top: 0.02em solid var(--c1);
+}
+.content ul .enrolled-students-box:active {
+  color: var(--c1);
+}
+.content ul .enrolled-students-box .enrolled-students li {
+  display: none;
+  text-decoration: none;
+  padding: 0%;
+  margin: 0%;
+  border-bottom: 0.02em solid var(--a1);
+}
+
+.enrolled-students-box p {
+  border-bottom: 0.02em solid var(--a2);
+}
+.enrolled-students-box :last-child {
+  border-bottom: none;
+}
+.content ul .enrolled-students-box .enrolled-students li:last-child {
+  border-bottom: none;
+}
+
+.content ul .enrolled-students-box:hover > .enrolled-students li {
+  display: inline;
+  transition: 0s;
+  height: 10em;
+  border: 0;
+}
+.content ul .enrolled-students-box:active > .enrolled-students li {
+  display: inline;
+  color: var(--a2);
+  height: 1em;
+  padding: 0.6em;
+}
+.content ul .enrolled-students-box:hover {
+  display: inline;
+  color: var(--a4);
+  /*padding-top: 0.02em;*/
+}
+.content
+  ul
+  .enrolled-students-box
+  .enrolled-students
+  li:hover
+  > .enrolled-students
+  li {
+  display: inline;
+  color: var(--a4);
+}
+
+.content ul .instructing-courses {
+  padding: 0.06em;
+  display: inline;
+}
+
+.content ul .instructing-courses-box:active {
+  color: white;
+}
+
+.content ul .instructing-courses-box .instructing-courses li {
+  display: none;
+  border-bottom: 0.02em solid white;
+  margin: 0%;
+  padding: 0%;
+}
+
+.content ul .instructing-courses-box .instructing-courses li:last-child {
+  border-bottom: none;
+}
+
+.content ul .instructing-courses-box:active > .instructing-courses li {
+  display: inline;
+  transition: 0s;
+  height: 10em;
+}
+.content ul .instructing-courses-box:hover > .instructing-courses li {
+  display: inline;
+  color: var(--a4);
+}
+.content ul .instructing-courses-box:hover {
+  display: inline;
+  color: var(--a4);
+}
+.content
+  ul
+  .instructing-courses-box
+  .instructing-courses
+  li:hover
+  > .instructing-courses
+  li {
+  display: inline;
+  color: var(--a4);
+}
+
+.course-header {
+  font-weight: bold;
+}
+.instructor-header {
+  font-weight: bold;
+}
+.enrolled-students-box,
+.instructing-courses-box {
+  cursor: pointer;
+}
+
+/*breadcrumbs*/
+.breadcrumbs ul svg {
+  width: 20px;
+  vertical-align: middle;
+}
+
+.breadcrumbs {
+  font-family: "Roboto", sans-serif;
+  padding: 10px 48px;
+  box-shadow: 0 4px 30px -10px rgba(238, 75, 75, 0.2);
+  width: fit-content;
+  margin-top: 1em;
+}
+
+.breadcrumbs ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+}
+
+.breadcrumbs ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.breadcrumbs ul li a:hover {
+  color: var(--a3);
+}
+
+.hidden {
+  display: none;
+}
+.extra_content {
+  display: none;
+}
+.show {
+  display: block !important;
+}

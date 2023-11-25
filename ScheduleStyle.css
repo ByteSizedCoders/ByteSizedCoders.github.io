@@ -1,0 +1,85 @@
+/* responsive web design*/
+
+/* styles for large screens */
+body {
+  background-color: var(--second-color);
+}
+.schedule {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.tname {
+  background-color: #a359d4;
+  color: #fff;
+}
+
+.tname img {
+  width: 7%;
+  height: 4%;
+}
+
+.days {
+  background-color: #c294e1;
+  color: #fff;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 5em auto;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 1em;
+  text-align: center;
+  color: var(--p3);
+  background-color: var(--s2);
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td.unavailable {
+  background-color: var(--s1);
+}
+
+/* style media for smaller screens */
+@media (max-width: 768px) {
+  .schedule {
+    font-size: 0.8em; /* Reduce font size */
+  }
+
+  table {
+    width: 100%; /* Make the table full width */
+    margin: 2em auto; /* Adjust margin for smaller screens */
+  }
+
+  th,
+  td {
+    padding: 0.5em; /* Reduce padding for smaller screens */
+  }
+
+  tname img {
+    width: 15%; /* Adjust image size for smaller screens */
+    height: auto; /* Allow height to adjust proportionally */
+  }
+}
+
+/* style media for mobile phones */
+@media (max-width: 480px) {
+  .schedule {
+    font-size: 0.7em; /* Further reduce font size */
+  }
+
+  table {
+    margin: 1em auto; /* Further adjust margin for very small screens */
+  }
+
+  .tname img {
+    width: 25%; /* Adjust image size for tiny screens */
+  }
+}
