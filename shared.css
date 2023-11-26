@@ -34,6 +34,7 @@ body:not(.dark-mode) {
   --s2: white;
   --about1: #666;
   --about2: #333;
+  --n1: rgb(105, 21, 126);
 }
 
 .dark-mode {
@@ -71,4 +72,5 @@ body:not(.dark-mode) {
   --s2: #bfbebe;
   --about1: #dbdbdb;
   --about2: #ffffff;
+  --n1: #dbdbdb;
 }
