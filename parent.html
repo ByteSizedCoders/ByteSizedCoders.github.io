@@ -18,25 +18,32 @@
         margin-top: 1em;
         margin-bottom: 0.5em;
       }
-      li.kidName {
-        margin: 0.5em;
-        padding: 0.3em; /* Add some padding for spacing */
-        background-color: var(--p1);
-        text-align: top left;
-        font-size: 1.5em;
+    
+      h6{
+        background-color:  rgba(138, 43, 226, 0.5);
         border-radius: 1vw;
-      }
+        margin:0.5em;
 
-      ul {
-        list-style-type: none;
-        padding: 0; /* Remove default padding for the ul element */
-        list-style-image: url(images/profileIcon.png);
-        list-style-position: inside;
-        position: center;
       }
-      p {
+      .students-container{
+        justify-content: right;
+        font-weight:lighter;
         font-size: 2em;
-        font-weight: bold;
+        
+      }
+       p{
+        position: relative;
+        left:auto;
+        bottom:0.8em;
+        color: var(--p3);
+        
+      }
+       img{
+        position: relative;
+        top:auto;
+      }
+      h1{
+        margin-left: 1em;
       }
       .button {
         height: 10em;
@@ -146,17 +153,14 @@
       </ul>
     </div>
     <!-- breadcrumbs  -->
-    <main>
-      <p style="color: var(--p3)">your kids:</p>
-      <div class="students-container"></div>
-    </main>
-    <div id="kidsContainer" class="students-container"></div>
+<main>
+    <h1 style="color: var(--p3);">your kids:</h1>
+    <div id="kidsContainer" class="students-container"><p id="kidNameDisplay" ></p></div>
+    <!--<div class="students-container">
+    </div>-->
+</main>
 
-    <!--<ul>
-      <li class="kidName">Reem saleh</li>
-      <li class="kidName">Noura Saleh</li>
-      <li class="kidName">Ahmad Saleh</li>
-    </ul>-->
+    
     <a href="register a new kid1.html">
       <button class="button" type="button" data-toggle="button">
         Register a new kid
@@ -207,6 +211,7 @@
       </div>
     </footer>
     <script>
+      //localStorage.clear();
       // Retrieve kidName from localStorage
       const storedKidName = localStorage.getItem("kidName");
 
@@ -225,22 +230,12 @@
       // Display children on the page
       const kidsContainer = document.getElementById("kidsContainer");
 
-      // If there are no children, set default values
-      if (existingChildren.length === 0) {
-        const defaultKids = [
-          {
-            kidName: "Haya",
-            kidPhoto: "profileIcon.png",
-            kidGender: "Female",
-            kidDOB: "2000-01-01",
-          },
-          {
-            kidName: "Nora",
-            kidPhoto: "profileIcon.png",
-            kidGender: "Female",
-            kidDOB: "2000-01-01",
-          },
-        ];
+// If there are no children, set default values
+if (existingChildren.length === 0) {
+  const defaultKids = [
+    { kidName: "Haya", kidPhoto: "images/profileIcon.png" },
+    { kidName: "Nora", kidPhoto: "images/profileIcon.png" },
+  ];
 
         // Save default kids to local storage
         localStorage.setItem("parentChildren", JSON.stringify(defaultKids));
@@ -252,18 +247,42 @@
         displayChildren(existingChildren);
       }
 
-      function displayChildren(children) {
-        const kidsList = document.createElement("ul");
+function displayChildren(children) {
+  const kidsList   = document.createElement("div");
 
-        children.forEach((child) => {
-          const listItem = document.createElement("li");
-          listItem.classList.add("kidName");
-          listItem.textContent = child.kidName;
-          kidsList.appendChild(listItem);
-        });
+  children.forEach((child, index) => {
+      const childDiv = document.createElement("h6");
+      childDiv.classList.add("student");
 
-        kidsContainer.appendChild(kidsList);
+      const childImage = document.createElement("img");
+      childImage.src = child.kidPhoto;
+      childImage.alt = child.kidName;
+
+      const childName = document.createElement("p");
+      childName.textContent = child.kidName;
+
+      childDiv.appendChild(childImage);
+      childDiv.appendChild(childName);
+
+      if (index === children.length - 1) {
+        // Add a class for the last child
+        childDiv.classList.add("lastKidName");
       }
-    </script>
+
+      kidsList.appendChild(childDiv);
+    });
+
+    // Clear existing children in #kidsContainer before appending the updated list
+    const existingKidsContainer = document.getElementById("kidsContainer");
+    existingKidsContainer.innerHTML = "";
+    existingKidsContainer.appendChild(kidsList);
+  }
+
+
+
+
+
+  </script>
+      
   </body>
 </html>

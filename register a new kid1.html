@@ -10,10 +10,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="shared.css" />
-    <script src="main.js"></script>
   </head>
-  <body onload="onload()">
+  <body>
     <nav class="navbar">
       <div>
         <a href="index.html" accesskey="h"
@@ -95,77 +93,101 @@
             />
           </svg>
         </li>
-        <li><a href="register a new kid1.html">Register a new kid</a></li>
+
+        <li>Register a new kid</li>
       </ul>
     </div>
     <!-- breadcrumbs  -->
 
     <div class="container">
-      <br />
+      <br >
       <form id="registrationForm">
         <fieldset>
           <legend><strong>Parent's Information</strong></legend>
-          <br />
-          <label>Parent's Name:<br /></label>
+          <br >
+          <label>Parent's Name:<br ></label>
           <input
             type="text"
             id="parentName"
             name="parentName"
-            required
-          /><br /><br />
+            
+          ><br ><br >
 
-          <label>Relationship with child:<br /></label>
+          <label>Relationship with child:<br ></label>
           <input
             type="text"
             id="RelationshipWChild"
             name="RelationshipWChild"
-            required
-          /><br /><br />
+            
 
-          <label>Parent's Email:<br /></label>
+          ><br ><br >
+
+          <label>Parent's Email:<br ></label>
           <input
             type="email"
             id="parentEmail"
             name="parentEmail"
-            required
-          /><br /><br />
+            
 
-          <label>Parent's Phone:<br /></label>
+          ><br ><br >
+
+          <label>Parent's Phone:<br ></label>
           <input
             type="text"
             id="parentPhone"
             name="parentPhone"
-            required
-          /><br /><br />
-        </fieldset>
-        <br />
-        <br />
-        <fieldset>
-          <br />
-          <legend><strong>Kid's Information</strong></legend>
-          <label>Kid's Name:<br /></label>
-          <input type="text" id="kidName" name="kidName" required /><br /><br />
+          
 
-          <label>Kid's Photo:<br /></label>
+          ><br ><br >
+        </fieldset>
+        <br >
+        <br >
+        <fieldset>
+          <br >
+          <legend><strong>Kid's Information</strong></legend>
+          <label>Kid's Name:<br > </label>
+          <input 
+          type="text" 
+          id="kidName" 
+          name="kidName" 
+          
+
+          ><br ><br >
+
+          <label>Kid's Photo:<br ></label>
           <input
             type="file"
             id="kidPhoto"
             name="kidPhoto"
-            required
-          /><br /><br />
+            
+
+          ><br ><br >
 
           <label>Kid's Gender:</label>
           <input type="radio" name="Gender" value="Male" /> Male
           <input type="radio" name="Gender" value="Female" /> Female
-          <br /><br />
+          
+          <br ><br >
 
           <label>Kid's Date of Birth:</label>
-          <input type="date" id="kidDOB" name="kidDOB" required /><br /><br />
+          <input type="date" id="kidDOB" name="kidDOB" 
+          ><br ><br >
+          
         </fieldset>
-        <br />
+        <br >
         <input type="submit" value="Submit" />
+        
       </form>
+      <div id="childInformation" style="display: none;">
+        <h2>Child Information:</h2>
+        <p><strong>Name:</strong> <span id="displayKidName"></span></p>
+        <p><strong>Photo Path:</strong> <span id="displayKidPhoto"></span></p>
+        <p><strong>Gender:</strong> <span id="displayKidGender"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="displayKidDOB"></span></p>
+      </div>
     </div>
+    
+    
 
     <footer class="footer">
       <div class="footercontainer">
@@ -197,63 +219,242 @@
         </div>
       </div>
     </footer>
-
+    
     <script>
-      const button = document.getElementById("button");
-      const navigationList = document.getElementById("nav");
-      button.addEventListener("click", () => {
-        navigationList.classList.toggle("active");
-      });
+    
+/////////////////////////////////////////////////////////////a
 
-      ///////////////////////////////////#5
-      document
-        .getElementById("registrationForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
+          let isValid = true;
 
-          // Get parent and kid information
-          const parentName = document.getElementById("parentName").value;
-          const relationshipWChild =
-            document.getElementById("RelationshipWChild").value;
-          const parentEmail = document.getElementById("parentEmail").value;
-          const parentPhone = document.getElementById("parentPhone").value;
-          const kidName = document.getElementById("kidName").value;
-          const kidPhoto = document.getElementById("kidPhoto").value; // Add logic to handle file upload
-          const kidGender = document.querySelector(
-            'input[name="Gender"]:checked'
-          ).value;
-          const kidDOB = document.getElementById("kidDOB").value;
+          document.getElementById("registrationForm").addEventListener("submit", function (event) {
+   // ... (validation logic)
 
-          // Create an object to store the information
-          const kidInformation = {
-            parentName,
-            relationshipWChild,
-            parentEmail,
-            parentPhone,
-            kidName,
-            kidPhoto, // Adjust this based on your file upload logic
-            kidGender,
-            kidDOB,
-          };
+          event.preventDefault(); // Prevent the default form submission behavior
+    
+          // Validate form inputs
+          const form = document.getElementById("registrationForm");
+          const formElements = form.elements;
+    
+          let isValid = true;
 
-          // Retrieve existing children from local storage
-          const existingChildren =
-            JSON.parse(localStorage.getItem("parentChildren")) || [];
+          for (let i = 0; i < formElements.length; i++) {
+            const element = formElements[i];
+    
+            if (element.type !== "submit") {
+              // Additional checks for specific fields
+              if (element.name === "parentName" || element.name === "kidName") {
+                if (/^\d/.test(element.value)) {
+                  alert(`Invalid ${element.name}. It can't start with numbers.`);
+                  isValid = false;
+                  break;
+                }
+                if (!element.value) {
+                  alert(`Please fill in the ${element.name} field.`);
+                  isValid = false;
+                  break; // Stop validation if an empty field is found
+                }
+              }
+    
+              if (element.name === "parentPhone") {
+                if (!element.value) {
+                  alert(`Please fill in the parent phone number field.`);
+                  isValid = false;
+                  break; // Stop validation if an empty field is found
+                }
+                if (!/^\d{10}$/.test(element.value)) {
+                  alert("Invalid phone number. Please enter a 10-digit number.");
+                  isValid = false;
+                  break;
+                }
+              
+              }
+    
+              if (element.name === "kidDOB") {
+                const currentDate = new Date();
+                const inputDate = new Date(element.value);
+    
+                if (!element.value) {
+                  alert(`Please fill in the kid's date of birth field.`);
+                  isValid = false;
+                  break; // Stop validation if an empty field is found
+                }
+                if (inputDate.getFullYear() > 2017) {
+                  alert("Children younger than 6 years old are not accepted.");
+                  isValid = false;
+                  break;
+                }
+                
+              }
+    
+              if (element.name === "RelationshipWChild") {
+                if (/^\d/.test(element.value)) {
+                  alert(`Invalid ${element.name}. It can't start with numbers.`);
+                  isValid = false;
+                  break;
+                }
+                if (!element.value) {
+                  alert(`Please fill in the relationship With Child field.`);
+                  isValid = false;
+                  break; // Stop validation if an empty field is found
+                }
+              }
 
-          // Add the new kid information
-          existingChildren.push(kidInformation);
+              if (element.name === "parentEmail") {
+             
+                if (!element.value) {
+                  alert(`Please fill in the Email field.`);
+                  isValid = false;
+                  break; // Stop validation if an empty field is found
+                }
+              }
 
-          // Save the updated children to local storage
-          localStorage.setItem(
-            "parentChildren",
-            JSON.stringify(existingChildren)
-          );
+              if (element.name === "kidPhoto") {
+             
+             if (!element.value) {
+               alert(`Please fill in the kid Photo field.`);
+               isValid = false;
+               break; // Stop validation if an empty field is found
+             }
+           }
 
-          // Optionally, you can redirect to a confirmation page or perform other actions
-          alert("Kid registration successful!");
-          // Clear the form
-          document.getElementById("registrationForm").reset();
+           if (element.name === "Gender" && !document.querySelector('input[name="Gender"]:checked')) {
+          alert("Please select a gender.");
+          isValid = false;
+          break;
+        }
+
+              
+            }
+          }
+    
+          if (isValid) {
+            
+            const kidName = form.querySelector('[name="kidName"]').value;
+            const kidPhotoInput = form.querySelector('[name="kidPhoto"]');
+            const kidGender = form.querySelector('[name="Gender"]:checked').value;
+            const kidDOB = form.querySelector('[name="kidDOB"]').value;
+            const parentEmail = form.querySelector('[name="parentEmail"]').value;
+            const parentPhone = form.querySelector('[name="parentPhone"]').value;
+
+    
+            // Read the image file
+            const kidPhotoFile = kidPhotoInput.files[0];
+            const reader = new FileReader();
+    
+            reader.onload = function (e) {
+              const originalImage = new Image();
+              originalImage.src = e.target.result;
+    
+              originalImage.onload = function () {
+                // Calculate the aspect ratio of the original image
+                const aspectRatio = originalImage.width / originalImage.height;
+    
+                // Set the maximum width and height
+                const maxWidth = 150;
+                const maxHeight = 110;
+    
+                // Calculate the new width and height to fit into the box
+                let newWidth = originalImage.width;
+                let newHeight = originalImage.height;
+    
+                if (newWidth > maxWidth) {
+                  newWidth = maxWidth;
+                  newHeight = newWidth / aspectRatio;
+                }
+    
+                if (newHeight > maxHeight) {
+                  newHeight = maxHeight;
+                  newWidth = newHeight * aspectRatio;
+                }
+    
+                // Create a canvas to draw the resized image
+                const canvas = document.createElement("canvas");
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(originalImage, 0, 0, newWidth, newHeight);
+    
+                // Get the resized image as a data URL with increased quality
+                const resizedDataURL = canvas.toDataURL("image/jpeg", 0.9);
+    
+                // Store child information in localStorage
+                localStorage.setItem("kidName", kidName);
+               
+
+
+    
+                // Open a new window to display the child information
+                const printWindow = window.open("", "_blank");
+    
+                // Populate the new window with child information
+                printWindow.document.write(
+                  `<html><head><title>Child Information</title></head><body>`
+                );
+                printWindow.document.write(`<h2>Child Information:</h2>`);
+                printWindow.document.write(
+                  `<p><img src="${resizedDataURL}" alt="${kidName}'s Photo" width="${newWidth}" height="${newHeight}"></p>`
+                );
+                printWindow.document.write(`<p><strong>Name:</strong> ${kidName}</p>`);
+                printWindow.document.write(`<p><strong>Gender:</strong> ${kidGender}</p>`);
+                printWindow.document.write(`<p><strong>Email:</strong> ${parentEmail}</p>`);
+                printWindow.document.write(`<p><strong>phone:</strong> ${parentPhone}</p>`);
+
+
+                printWindow.document.write(`</body></html>`);
+    
+                // Close the document
+                printWindow.document.close();
+              };
+            };
+    
+            // Read the file as a data URL
+            reader.readAsDataURL(kidPhotoFile);
+
+          }
         });
+    
+      ///////////////////////////////////#5
+      //const existingChildren = JSON.parse(localStorage.getItem("parentChildren")) || [];
+      document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get parent and kid information
+        const parentName = document.getElementById("parentName").value;
+        const relationshipWChild = document.getElementById("RelationshipWChild").value;
+        const parentEmail = document.getElementById("parentEmail").value;
+        const parentPhone = document.getElementById("parentPhone").value;
+        const kidName = document.getElementById("kidName").value;
+        const kidPhoto = document.getElementById("kidPhoto").value; // Add logic to handle file upload
+        const kidGender = document.querySelector('input[name="Gender"]:checked').value;
+        const kidDOB = document.getElementById("kidDOB").value;
+
+        // Create an object to store the information
+        const kidInformation = {
+          parentName,
+          relationshipWChild,
+          parentEmail,
+          parentPhone,
+          kidName,
+          kidPhoto, // Adjust this based on your file upload logic
+          kidGender,
+          kidDOB,
+        };
+        if(isValid){
+ // Retrieve existing children from local storage
+ const existingChildren = JSON.parse(localStorage.getItem("parentChildren")) || [];
+
+// Add the new kid information
+existingChildren.push(kidInformation);
+
+// Save the updated children to local storage
+localStorage.setItem("parentChildren", JSON.stringify(existingChildren));
+
+// Optionally, you can redirect to a confirmation page or perform other actions
+alert("Kid registration successful!");
+// Clear the form
+document.getElementById("registrationForm").reset();}
+
+      });
     </script>
   </body>
 </html>
