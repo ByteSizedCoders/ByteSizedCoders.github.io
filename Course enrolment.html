@@ -372,6 +372,36 @@
 
 
 
+// Assuming you're in the course enrollment section or a new script block
+
+// Retrieve existing children from local storage
+const existingChildren = JSON.parse(localStorage.getItem("parentChildren")) || [];
+
+// Get the <select> element
+const selectElement = document.getElementById("kids");
+
+// Check if there are any registered kids
+if (existingChildren.length > 0) {
+  // Loop through the kids and populate the <select> element
+  for (const child of existingChildren) {
+    // Create an <option> element for each child
+    const optionElement = document.createElement("option");
+    
+    // Set the value to the kid's name (you can change this based on your structure)
+    optionElement.value = child.kidName;
+    
+    // Display the kid's name as the option text
+    optionElement.text = child.kidName;
+
+    // Append the <option> to the <select> element
+    selectElement.appendChild(optionElement);
+  }
+} else {
+  // If no registered kids found, you can provide a default option or handle it accordingly
+  const defaultOption = document.createElement("option");
+  defaultOption.text = "No students available";
+  selectElement.appendChild(defaultOption);
+}
 
 
 
