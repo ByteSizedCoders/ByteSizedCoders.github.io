@@ -12,41 +12,46 @@
     <link rel="stylesheet" href="shared.css" />
     <script src="main.js"></script>
     <style>
-      body {
+      body{
         background-color: var(--primary-color);
+       
       }
-      .enrol {
+      .Enroll-form {
+      
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1em;
-        text-align: center;
         align-items: center;
         margin: 9em;
         margin-top: 1em;
         color: #fff;
       }
-      label {
+     label {
         align-items: normal;
         text-align: left;
         font-size: 1.4em;
       }
-      .enrol div {
-        padding: 1em;
-      }
-
       .title {
         padding-top: 5vw;
         color: var(--cen1);
         margin: 2vw;
       }
-
       form {
         background-color: var(--cen2);
         padding: 3vw;
         border-radius: 3vw;
         box-shadow: 0 0 4vw rgba(0, 0, 0, 0.4);
       }
+      h2 {
+        align-items:center;
+        text-align: left;
+        font-size: 1em;
+        padding: 3%;
+       
+      }
+
+   
       select {
-        width: 100%;
+        width: 90%;
         padding: 0.3em;
         font-size: 1.7vw;
         background-color: #ffffff;
@@ -55,39 +60,52 @@
         border-radius: 1vw;
         margin-bottom: 0.4em;
       }
-      .filter {
-        display: block;
-      }
-      .filter .filter2 {
-        width: 13em;
-      }
-      .filter .t {
-        padding-right: 2em;
+
+      option {
+        color: black;
       }
 
-      input[type="submit"]:hover {
-        background-color: #a0a5a8;
+      
+      .custom-checkbox {
+        display: flex;
+        align-items: center;
+        margin: 3vw;
       }
 
-      .fa-filter {
-        padding-left: 1em;
-        padding-right: 1em;
+      .custom-checkbox label {
+        font-size: 18px;
+        margin-left: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 10px;
       }
-      img {
-        width: 8%;
-        padding: 0;
+
+      .custom-checkbox input {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      img.checkbox-image {
+        width: 50px;
+        height: 50px;
+      }
+
+      .centered-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      main{
         margin: 0;
+        padding: 0;
       }
-      input[type="checkbox"] {
-        margin-left: 2em;
-        float: right;
-      }
-
+     
       button[type="submit"] {
         background-color: #e1b5fb;
         color: #ffffff;
         padding: 1vw 2vw;
-        margin: 2vw;
+        margin: 1vw;
         font-size: 1.4em;
         border: none;
         border-radius: 1vw;
@@ -95,17 +113,11 @@
       button[type="submit"]:hover {
         background-color: #f7e6fd;
       }
-      .courses {
-        text-align: left;
-      }
-
-      .courses input[type] {
+      
+     input[type] {
         float: right;
         margin-left: 1em;
         padding-top: 2em;
-      }
-      .breadcrumbs {
-        margin-top: 1em;
       }
     </style>
   </head>
@@ -197,59 +209,115 @@
       </ul>
     </div>
     <!-- breadcrumbs  -->
-    <div class="enrol">
+    <main class="main">
       <div class="title"><h1>Course enrolment</h1></div>
+      <form class="Enroll-form">
+        <h2>student name:</h2>
+        <select id="kids" name="kids">
+          <option value="">choose student</option>
+        </select>
 
-      <form>
+        <h2><br></h2>
+        <div class="f">
+          <div>
+            <select id="prerequisites" name="prerequisites">
+          <option value="">filter by prerequisites</option>
+        </select>
+        <i class="fa-solid fa-filter" style="color: #ffffff"></i>
+          </div>
         <div>
-          <label>student name </label>
-          <select name="student">
-            <option>choose student</option>
-            <option>Ahmad saleh</option>
-            <option>Noura Saleh</option>
-            <option>Reem Saleh</option>
+          <select id="tutors" name="tutors">
+            <option value="">filter by tutors</option>
           </select>
+          <i class="fa-solid fa-filter" style="color: #ffffff"></i>      </div>
+        <div
+          class="custom-checkbox"
+          tutor="Tammy west"
+          prerequisite="Basic understanding of programming concepts and logic"
+        >
+          <input
+            type="checkbox"
+            id="Java for beginners"
+            name="agree"
+            value="Java for beginners"
+          />
+          <img
+            class="checkbox-image"
+            src="images/JavaScript-logo.png"
+            alt="Java for beginners"
+          />
+          <label for="Java for beginners">Java Script </label>
         </div>
-        <div class="filter">
-          <div class="t">
-            <select class="filter2" name="Prerequisites">
-              <option>filter by prerequisites</option>
-              <option>Python</option>
-              <option>Scratch</option>
-              <option>javasript</option>
-            </select>
-            <i class="fa-solid fa-filter" style="color: #ffffff"></i>
-            <select class="filter2" name="Tutors">
-              <option>filter tutor</option>
-              <option>Hailey rhode</option>
-              <option>Tammy west</option>
-              <option>Daniel roberts</option>
-            </select>
-            <i class="fa-solid fa-filter" style="color: #ffffff"></i>
-          </div>
 
-          <div class="courses">
-            <p class="course">
-              <img src="images/Python.svg.png" alt="Python" /><label>
-                Python</label
-              ><input type="checkbox" />
-            </p>
-            <p class="course">
-              <label><img src="images/htmlPhoto.png" alt="HTML" /> HTML</label
-              ><input type="checkbox" />
-            </p>
-            <p class="course">
-              <label>
-                <img src="images/scratch.png" alt="scratch" /> scratch</label
-              ><input type="checkbox" />
-            </p>
-          </div>
+        <div
+          class="custom-checkbox"
+          tutor="Rachel green"
+          prerequisite="Familiarity with web browsing"
+        >
+          <input type="checkbox" id="HTML" name="agree" value="HTML" />
+          <img class="checkbox-image" src="images/htmlPhoto.png" alt="Checkmark" />
+          <label for="HTML">HTML</label>
+        </div>
+        <div
+          class="custom-checkbox"
+          tutor="Hailey Rhode"
+          prerequisite="Basic understanding of programming concepts and logic"
+        >
+          <input
+            type="checkbox"
+            id="python for beginners"
+            name="agree"
+            value="python for beginners"
+          />
+          <img class="checkbox-image" src="images/Python.svg.png" alt="Checkmark" />
+          <label for="python for beginners">Python</label>
+        </div>
+        <div
+          class="custom-checkbox"
+          tutor="Daniel Roberts"
+          prerequisite="Basic understanding of computer programming concepts"
+        >
+          <input type="checkbox" id="UX/UI" name="agree" value="UX/UI" />
+          <img class="checkbox-image" src="images/" alt="UX" />
+          <label for="UX/UI">UX</label>
+        </div>
+        <div
+          class="custom-checkbox"
+          tutor="Alissa jacks"
+          prerequisite="Familiarity with web browsing"
+        >
+          <input
+            type="checkbox"
+            id="intro"
+            name="agree"
+            value="Introduction to progarmming"
+          />
+          <img
+            class="checkbox-image"
+            src="images/game-coding.jpg"
+            alt="Introduction to progarmming"
+          />
+          <label for="intro">Introduction to progarmming</label>
+        </div>
+        <div
+          class="custom-checkbox"
+          tutor="Dan Parker"
+          prerequisite="Basic understanding of programming concepts and logic"
+        >
+          <input type="checkbox" id="C++" name="agree" value="C++" />
+          <img class="checkbox-image" src="images/Cplus.png" alt="C++" />
+          <label for="C++">C++ </label>
         </div>
       </form>
-
-      <button type="submit" value="Submit">Enroll</button>
-    </div>
-
+     
+      <div class="centered-button">
+        <div class="Button">
+          <button type="submit" value="Submit">Enroll</button>
+        </div>
+     
+    </main>
+    
+    
     <!--footer-->
     <footer class="footer">
       <div class="footercontainer">
@@ -281,5 +349,151 @@
         </div>
       </div>
     </footer>
+     
+<script>
+   
+  document.addEventListener("DOMContentLoaded", function () {
+  
+
+
+    
+
+      var courses = [
+          { name: "Java for beginners", tutor: "Tammy west", prerequisite: "Basic understanding of programming concepts and logic"  },
+          { name: "HTML", tutor: "Rachel green", prerequisite: "Familiarity with web browsing"  },
+          { name: "python for beginners", tutor: "Hailey Rhode", prerequisite: "Basic understanding of programming concepts and logic" },
+          { name: "CSS", tutor: "Hailey Rhode", prerequisite: "HTML" },
+          { name: "JavaScript", tutor: "Rachel green", prerequisite: "Basic understanding of programming concepts and logic" },
+          { name: "UX/UI", tutor: "Daniel Roberts", prerequisite: "Basic understanding of computer programming concepts" },
+          { name: "introduction to programming", tutor:"Sarah Adams", prerequisite: "Familiarity with web browsing" },
+          { name: "C++", tutor: "Tammy west", prerequisite: "Basic understanding of programming concepts and logic" },
+          { name: "Graphic Design", tutor: "Alissa jacks", prerequisite: "Basic understanding of design principles, visual aesthetics, and human behavior" }
+      ];
+
+
+
+
+
+
+      function populateKidsDropdown() {
+    var kidsDropdown = document.getElementById('kids');
+    var kids = JSON.parse(localStorage.getItem('ChildRecords'));
+
+    kids?.forEach(function (kid) {
+      var option = document.createElement('option');
+      option.value = kid.firstName;
+      option.textContent = kid.firstName;
+      kidsDropdown.appendChild(option);
+    });
+  }
+  
+  populateKidsDropdown();
+          fillFilterOptions("prerequisites", getUniquePrerequisites(courses));
+          fillFilterOptions("tutors", getUniqueTutors(courses));
+
+          document.getElementById("tutors").addEventListener("change", filterCourses);
+          document.getElementById("prerequisites").addEventListener("change", filterCourses);
+          document.querySelector("form").addEventListener("submit", handleFormSubmit);
+
+          filterCourses(); 
+
+          function fillFilterOptions(selectId, options) {
+              var select = document.getElementById(selectId);
+              options.forEach(function (option) {
+                  var optionElement = document.createElement("option");
+                  optionElement.value = option;
+                  optionElement.textContent = option;
+                  select.appendChild(optionElement);
+              });
+          }
+
+          function getUniquePrerequisites(courses) {
+              // Function to get unique prerequisites from courses array
+              var prerequisites = courses.map(course => course.prerequisite);
+              return Array.from(new Set(prerequisites.filter(Boolean)));
+          }
+
+          function getUniqueTutors(courses) {
+              // Function to get unique tutors from courses array
+              var tutors = courses.map(course => course.tutor);
+              return Array.from(new Set(tutors));
+          }
+
+          
+
+
+    
+  function filterCourses() {
+  var tutorFilter = document.getElementById("tutors");
+  var selectedTutor = tutorFilter.value;
+
+  var prerequisitesFilter = document.getElementById("prerequisites");
+  var selectedPrerequisite = prerequisitesFilter.value;
+
+  var courseCards = document.getElementsByClassName("custom-checkbox");
+
+  for (var i = 0; i < courseCards.length; i++) {
+      var courseCard = courseCards[i];
+      var tutor = courseCard.getAttribute("tutor");
+      var prerequisites = courseCard.getAttribute("prerequisite");
+
+      var tutorMatch = selectedTutor === "" || tutor === selectedTutor;
+      var prerequisiteMatch = selectedPrerequisite === "" || prerequisites===selectedPrerequisite;
+
+      if (tutorMatch && prerequisiteMatch) {
+          courseCard.style.display = "block"; // Show the course card
+      } else {
+          courseCard.style.display = "none"; // Hide the course card
+      }
+  }
+}      
+
+  
+  
+          function handleFormSubmit(event) {
+              // Submit button click event
+              event.preventDefault(); // Prevent the default form submission behavior
+
+              // Check if a child is selected
+              var selectedChild = document.getElementById("kids").value;
+              if (!selectedChild) {
+                  alert("Please select a child.");
+                  return;
+              }
+
+              // Check if at least one course is selected
+              var selectedCourses = Array.from(document.querySelectorAll(".custom-checkbox input:checked")).map(function (checkbox) {
+                  return checkbox.getAttribute('value');
+              });
+
+              if (selectedCourses.length === 0) {
+                  alert("Please select at least one course.");
+                  return;
+              }
+
+              
+              // Display information on the page
+              var infoContainer = document.createElement("div");
+              infoContainer.className = "enrollment-info";
+              infoContainer.innerHTML = "<h3>Enrollment Information</h3>" +
+                  "<p>Child: " + selectedChild + "</p>" +
+                  "<p>Courses:</p><ul>" + selectedCourses.map(course => "<li>" + course + "</li>").join("") + "</ul>";
+
+              // Clear previous information and display new information
+              var previousInfo = document.querySelector(".enrollment-info");
+              if (previousInfo) {
+                  previousInfo.remove();
+              }
+             
+
+              document.querySelector("main").appendChild(infoContainer);
+
+              // Clear the form
+              document.querySelector("form").reset();
+          }
+          
+      });
+</script>
+     
   </body>
 </html>
