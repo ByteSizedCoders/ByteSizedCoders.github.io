@@ -87,18 +87,13 @@ nav div img {
   }
 
   .navbar ul {
-    display: block;
+    display: none;
   }
   .navbar li {
     display: block;
     border-top: 1px solid rgb(255, 255, 255);
     padding-top: 15px;
     text-align: center;
-  }
-  .navlist.active {
-    width: 100%;
-    text-align: center;
-    display: none;
   }
   nav div img {
     width: 30%;
@@ -130,6 +125,16 @@ nav div img {
     width: 70%;
   }
 }
+.navlist.active {
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.navbar ul.active {
+  display: block;
+}
+
 .breadcrumbs ul svg {
   width: 20px;
   vertical-align: middle;
